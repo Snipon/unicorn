@@ -1,0 +1,14 @@
+name = Unicorn
+description = Base theme suitable for Panels Everywhere.
+core = 7.x
+engine = phptemplate
+
+; Twitter bootstrap
+stylesheets[all][] = bootstrap/css/bootstrap.css
+stylesheets[all][] = bootstrap/css/responsive.css
+
+plugins[panels][layouts] = plugins/layouts
+
+api[panels][styles][version] = 2
+
+
