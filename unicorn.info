@@ -4,8 +4,8 @@ core = 7.x
 engine = phptemplate
 
 ; Twitter bootstrap
-stylesheets[all][] = bootstrap/css/bootstrap.css
-stylesheets[all][] = bootstrap/css/responsive.css
+stylesheets[all][] = css/bootstrap.css
+stylesheets[all][] = css/responsive.css
 
 plugins[panels][layouts] = plugins/layouts
 
