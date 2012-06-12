@@ -13,13 +13,13 @@
 <?php endif; ?>
 
 <?php if (!empty($content['header'])): ?>
-  <header class="contentheader span12 clearfix">
+  <header class="contentheader span16 clearfix">
     <?php print render($content['header']); ?>
   </header>
 <?php endif; ?>
 
 <?php if (!empty($content['main'])): ?>
-  <div class="main span8 clearfix">
+  <div class="main span12 clearfix">
     <?php print render($content['main']); ?>
   </div>
 <?php endif; ?>
@@ -31,7 +31,7 @@
 <?php endif; ?>
 
 <?php if (!empty($content['footer'])): ?>
-  <footer class="contentfooter span12 clearfix">
+  <footer class="contentfooter span16 clearfix">
     <?php print render($content['footer']); ?>
   </footer>
 <?php endif; ?>
