@@ -1,5 +1,21 @@
 <?php
 /**
+ * Change the default meta content-type tag to the shorter HTML5 version.
+ */
+function unicorn_html_head_alter(&$head_elements) {
+  $head_elements['system_meta_content_type']['#attributes'] = array(
+    'charset' => 'utf-8',
+  );
+}
+
+/**
+ * Changes the search form to use the HTML5 "search" input attribute.
+ */
+function unicorn_preprocess_search_block_form(&$vars) {
+  $vars['search_form'] = str_replace('type="text"', 'type="search"', $vars['search_form']);
+}
+
+/**
  * Implementation of theme_panels_default_style_render_region().
  */
 function unicorn_panels_default_style_render_region($vars) {
