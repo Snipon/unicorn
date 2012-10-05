@@ -3,12 +3,11 @@ description = Base theme suitable for Panels Everywhere.
 core = 7.x
 engine = phptemplate
 
-; Twitter bootstrap
-stylesheets[all][] = css/bootstrap.css
-stylesheets[all][] = css/responsive.css
-
 plugins[panels][layouts] = plugins/layouts
 
+stylesheets[all and (min-width: 520px)][] = stylesheets/unicorn.grid-320.css
+stylesheets[all and (min-width: 768px)][] = stylesheets/unicorn.grid-768.css
+stylesheets[all and (min-width: 960px)][] = stylesheets/unicorn.grid-960.css
+stylesheets[all][]= stylesheets/unicorn.main.css
+
 api[panels][styles][version] = 2
-
-

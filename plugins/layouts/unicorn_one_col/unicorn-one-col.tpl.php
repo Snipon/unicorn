@@ -6,7 +6,7 @@
 <?php endif; ?>
 
 <?php if (!empty($content['main'])): ?>
-  <div class="main row">
+  <div class="main">
       <?php print render($content['main']); ?>
   </div>
 <?php endif; ?>

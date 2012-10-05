@@ -13,31 +13,31 @@
 <?php endif; ?>
 
 <?php if (!empty($content['header'])): ?>
-  <header class="contentheader span16 clearfix">
+  <header class="region contentheader clearfix">
     <?php print render($content['header']); ?>
   </header>
 <?php endif; ?>
 
 <?php if (!empty($content['aside_alpha'])): ?>
-  <aside class="sidebar-left span4 clearfix">
+  <aside class="region sidebar-left">
     <?php print render($content['aside_alpha']); ?>
   </aside>
 <?php endif; ?>
 
 <?php if (!empty($content['main'])): ?>
-  <div class="main span8 clearfix">
+  <div class="region main">
     <?php print render($content['main']); ?>
   </div>
 <?php endif; ?>
 
 <?php if (!empty($content['aside_beta'])): ?>
-  <aside class="sidebar-right span4 clearfix">
+  <aside class="region sidebar-right">
     <?php print render($content['aside_beta']); ?>
   </aside>
 <?php endif; ?>
 
 <?php if (!empty($content['footer'])): ?>
-  <footer class="contentfooter span16 clearfix">
+  <footer class="region contentfooter ">
     <?php print render($content['footer']); ?>
   </footer>
 <?php endif; ?>

@@ -7,31 +7,31 @@
  */
 ?>
 <?php if (!empty($css_id)): ?>
-  <div id="<?php print $css_id; ?>" class="row">
+  <div id="<?php print $css_id; ?>" class="unicorn-two-col">
 <?php else: ?>
-  <div class="row">
+  <div>
 <?php endif; ?>
 
 <?php if (!empty($content['header'])): ?>
-  <header class="contentheader span16 clearfix">
+  <header class="region grid-16 contentheader">
     <?php print render($content['header']); ?>
   </header>
 <?php endif; ?>
 
 <?php if (!empty($content['main'])): ?>
-  <div class="main span12 clearfix">
+  <div class="region main">
     <?php print render($content['main']); ?>
   </div>
 <?php endif; ?>
 
 <?php if (!empty($content['aside'])): ?>
-  <aside class="sidebar span4 clearfix">
+  <aside class="region sidebar-right">
     <?php print render($content['aside']); ?>
   </aside>
 <?php endif; ?>
 
 <?php if (!empty($content['footer'])): ?>
-  <footer class="contentfooter span16 clearfix">
+  <footer class="region contentfooter">
     <?php print render($content['footer']); ?>
   </footer>
 <?php endif; ?>

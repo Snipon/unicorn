@@ -1,0 +1,23 @@
+@import "blueprint/grid"
+
+$blueprint-grid-columns: 1
+$blueprint-grid-width: 320px
+$blueprint-grid-margin: 0px
+$blueprint-grid-outer-width: $blueprint-grid-width + $blueprint-grid-margin
+$blueprint-container-size: $blueprint-grid-outer-width * $blueprint-grid-columns - $blueprint-grid-margin
+
+.page-wrapper
+  +container
+
+.contentheader,
+.contentfooter
+  +column(1, true)
+
+.sidebar-left
+  +column(1, false)
+
+.main
+  +column(1, false)
+
+.sidebar-right
+  +column(1, true)
