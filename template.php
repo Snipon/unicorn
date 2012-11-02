@@ -1,7 +1,4 @@
 <?php
-drupal_set_message('Status', 'status');
-drupal_set_message('Status', 'warning');
-drupal_set_message('Status', 'error');
 /**
  * Implementation of template_preprocess_html
  */
