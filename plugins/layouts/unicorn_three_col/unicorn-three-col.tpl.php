@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * This layout is intended to be used inside the page content pane. Thats why
@@ -13,31 +12,31 @@
 <?php endif; ?>
 
 <?php if (!empty($content['header'])): ?>
-  <header class="region contentheader clearfix">
+  <header class="region contentheader span12">
     <?php print render($content['header']); ?>
   </header>
 <?php endif; ?>
 
 <?php if (!empty($content['aside_alpha'])): ?>
-  <aside class="region sidebar-left">
+  <aside class="region sidebar-left span3">
     <?php print render($content['aside_alpha']); ?>
   </aside>
 <?php endif; ?>
 
 <?php if (!empty($content['main'])): ?>
-  <div class="region main">
+  <div class="region main span6">
     <?php print render($content['main']); ?>
   </div>
 <?php endif; ?>
 
 <?php if (!empty($content['aside_beta'])): ?>
-  <aside class="region sidebar-right">
+  <aside class="region sidebar-right span3">
     <?php print render($content['aside_beta']); ?>
   </aside>
 <?php endif; ?>
 
 <?php if (!empty($content['footer'])): ?>
-  <footer class="region contentfooter ">
+  <footer class="region contentfooter span12">
     <?php print render($content['footer']); ?>
   </footer>
 <?php endif; ?>

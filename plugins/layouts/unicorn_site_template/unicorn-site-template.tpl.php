@@ -10,9 +10,9 @@
 
   <?php if (!empty($content['branding'])): ?>
     <div class="branding-wrapper">
-      <header class="branding container">
+      <section class="branding container">
         <?php print render($content['branding']); ?>
-      </header>
+      </section>
     </div>
   <?php endif; ?>
 
@@ -34,8 +34,8 @@
 
   <?php if (!empty($content['footer'])): ?>
     <div class="closure-wrapper">
-        <footer class="closure container">
-            <?php print render($content['footer']); ?>
+        <section class="closure container">
+          <?php print render($content['footer']); ?>
         </footer>
     </div>
   <?php endif; ?>

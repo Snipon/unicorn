@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * This layout is intended to be used inside the page content pane. Thats why
@@ -7,31 +6,31 @@
  */
 ?>
 <?php if (!empty($css_id)): ?>
-  <div id="<?php print $css_id; ?>" class="unicorn-two-col">
+  <div id="<?php print $css_id; ?>" class="unicorn-two-col row">
 <?php else: ?>
   <div>
 <?php endif; ?>
 
 <?php if (!empty($content['header'])): ?>
-  <header class="region grid-16 contentheader">
+  <header class="region contentheader span12">
     <?php print render($content['header']); ?>
   </header>
 <?php endif; ?>
 
 <?php if (!empty($content['main'])): ?>
-  <div class="region main">
+  <div class="region main span9">
     <?php print render($content['main']); ?>
   </div>
 <?php endif; ?>
 
 <?php if (!empty($content['aside'])): ?>
-  <aside class="region sidebar-right">
+  <aside class="region sidebar-right span3">
     <?php print render($content['aside']); ?>
   </aside>
 <?php endif; ?>
 
 <?php if (!empty($content['footer'])): ?>
-  <footer class="region contentfooter">
+  <footer class="region contentfooter span12">
     <?php print render($content['footer']); ?>
   </footer>
 <?php endif; ?>
