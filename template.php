@@ -148,7 +148,7 @@ function unicorn_menu_local_tasks(&$variables) {
   }
   if (!empty($variables['secondary'])) {
     $variables['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
-    $variables['secondary']['#prefix'] .= '<ul class="nav nav-tabs secondary">';
+    $variables['secondary']['#prefix'] .= '<ul class="nav nav-pills secondary">';
     $variables['secondary']['#suffix'] = '</ul>';
     $output .= drupal_render($variables['secondary']);
   }
@@ -159,15 +159,13 @@ function unicorn_menu_local_tasks(&$variables) {
 /**
  * Implementation of theme_button
  */
-function unicorn_button($variables) {
-  $element = $variables['element'];
-  $element['#attributes']['type'] = 'submit';
-  element_set_attributes($element, array('id', 'name', 'value'));
+function unicorn_button(&$variables) {
+  // Add twitter bootstrap button class
+  $variables['element']['#attributes']['class'][] = 'btn';
 
-  $element['#attributes']['class'][] = 'btn form-' . $element['#button_type'];
-  if (!empty($element['#attributes']['disabled'])) {
-    $element['#attributes']['class'][] = 'form-button-disabled';
+  if (in_array('delete', $variables['element']['#parents'])) {
+    $variables['element']['#attributes']['class'][] = 'btn-warning';
   }
 
-  return '<input' . drupal_attributes($element['#attributes']) . ' />';
+  return theme_button($variables);
 }
