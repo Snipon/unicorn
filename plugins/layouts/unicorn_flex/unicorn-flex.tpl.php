@@ -24,7 +24,7 @@
 <?php endif; ?>
 
 <?php if (!empty($content['main'])): ?>
-  <div class="region main span6">
+  <div class="region main <?php print grid('span12', $content['aside_alpha'], 3, $content['aside_beta'], 3); ?>">
     <?php print render($content['main']); ?>
   </div>
 <?php endif; ?>
