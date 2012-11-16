@@ -1,5 +1,19 @@
 <?php
 /**
+ * Order of function types:
+ * - Custom functions
+ * - Preprocess functions
+ * - Theme functions
+ */
+
+/**
+ * Generic function that modifies some variables in all unicorn layouts.
+ */
+function unicorn_check_layout_variables(&$vars) {
+  $vars['css_id'] = strtr($vars['css_id'], '_', '-');
+}
+
+/**
  * Implementation of template_preprocess_html
  */
 function unicorn_preprocess_html(&$variables){
@@ -52,6 +66,30 @@ function unicorn_preprocess_html(&$variables){
 }
 
 /**
+ * Changes the search form to use the HTML5 "search" input attribute.
+ */
+function unicorn_preprocess_search_block_form(&$vars) {
+  $vars['search_form'] = str_replace('type="text"', 'type="search"', $vars['search_form']);
+}
+
+/**
+ * Implementation of template_preprocess_panels_pane
+ */
+function unicorn_preprocess_panels_pane(&$variables) {
+  // Wrap site name pane with some markup
+  if($variables['pane']->type == 'page_site_name') {
+    $variables['content'] = '<h1 class="site-name">' . l($variables['content'], '') . '</h1>';
+  }
+}
+
+/**
+ * Implementation of theme_panels_default_style_render_region().
+ */
+function unicorn_panels_default_style_render_region($vars) {
+  return implode($vars['panes']);
+}
+
+/**
  * Implementation of theme_status_messages
  */
 function unicorn_status_messages(&$variables) {
@@ -97,32 +135,23 @@ function unicorn_status_messages(&$variables) {
 }
 
 /**
- * Changes the search form to use the HTML5 "search" input attribute.
+ * Implementation of theme_menu_local_tasks
  */
-function unicorn_preprocess_search_block_form(&$vars) {
-  $vars['search_form'] = str_replace('type="text"', 'type="search"', $vars['search_form']);
-}
+function unicorn_menu_local_tasks(&$variables) {
+  $output = '';
 
-/**
- * Implementation of theme_panels_default_style_render_region().
- */
-function unicorn_panels_default_style_render_region($vars) {
-  return implode($vars['panes']);
-}
-
-/**
- * Generic function that modifies some variables in all unicorn layouts.
- */
-function unicorn_check_layout_variables(&$vars) {
-  $vars['css_id'] = strtr($vars['css_id'], '_', '-');
-}
-
-/**
- * Implementation of template_preprocess_panels_pane
- */
-function unicorn_preprocess_panels_pane(&$variables) {
-  // Wrap site name pane with some markup
-  if($variables['pane']->type == 'page_site_name') {
-    $variables['content'] = '<h1 class="site-name">' . l($variables['content'], '') . '</h1>';
+  if (!empty($variables['primary'])) {
+    $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
+    $variables['primary']['#prefix'] .= '<ul class="nav nav-tabs primary">';
+    $variables['primary']['#suffix'] = '</ul>';
+    $output .= drupal_render($variables['primary']);
   }
+  if (!empty($variables['secondary'])) {
+    $variables['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
+    $variables['secondary']['#prefix'] .= '<ul class="nav nav-tabs secondary">';
+    $variables['secondary']['#suffix'] = '</ul>';
+    $output .= drupal_render($variables['secondary']);
+  }
+
+  return $output;
 }

@@ -3,10 +3,19 @@ description = Base theme suitable for Panels Everywhere.
 core = 7.x
 engine = phptemplate
 
+; Panels
+; ------------------------------------------
+api[panels][styles][version] = 2
 plugins[panels][layouts] = plugins/layouts
 
-stylesheets[all][]= styles/unicorn.main.css
+; Stylesheet overrides
+; ------------------------------------------
+stylesheets[all][] = system.menus.css
 
+; Stylesheets
+; ------------------------------------------
+stylesheets[all][] = styles/unicorn.main.css
+
+; Scripts
+; ------------------------------------------
 scripts[] = js/unicorn.script.js
-
-api[panels][styles][version] = 2
