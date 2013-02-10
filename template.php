@@ -38,7 +38,7 @@ function unicorn_preprocess_html(&$variables){
   }
 
   $element = array();
-  
+
   // Set charset
   $element[] = array(
     '#tag' => 'meta',
@@ -47,7 +47,7 @@ function unicorn_preprocess_html(&$variables){
       'content' => 'utf-8',
     ),
   );
-  
+
   // Set device zoom
   $element[] = array (
     '#tag' => 'meta',
@@ -97,8 +97,8 @@ function unicorn_status_messages(&$variables) {
   $output = '';
 
   $status_heading = array(
-    'status' => t('Status message'), 
-    'error' => t('Error message'), 
+    'status' => t('Status message'),
+    'error' => t('Error message'),
     'warning' => t('Warning message'),
   );
 
@@ -212,16 +212,18 @@ function unicorn_pager($variables) {
   $li_next = theme('pager_next', array('text' => (isset($tags[3]) ? $tags[3] : t('next ›')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
   $li_last = theme('pager_last', array('text' => (isset($tags[4]) ? $tags[4] : t('last »')), 'element' => $element, 'parameters' => $parameters));
 
+  $items = array();
+
   if ($pager_total[$element] > 1) {
     if ($li_first) {
       $items[] = array(
-        'class' => array('pager-first'), 
+        'class' => array('pager-first'),
         'data' => $li_first,
       );
     }
     if ($li_previous) {
       $items[] = array(
-        'class' => array('pager-previous'), 
+        'class' => array('pager-previous'),
         'data' => $li_previous,
       );
     }
@@ -230,7 +232,7 @@ function unicorn_pager($variables) {
     if ($i != $pager_max) {
       if ($i > 1) {
         $items[] = array(
-          'class' => array('pager-ellipsis'), 
+          'class' => array('pager-ellipsis'),
           'data' => '…',
         );
       }
@@ -238,26 +240,26 @@ function unicorn_pager($variables) {
       for (; $i <= $pager_last && $i <= $pager_max; $i++) {
         if ($i < $pager_current) {
           $items[] = array(
-            'class' => array('pager-item'), 
+            'class' => array('pager-item'),
             'data' => theme('pager_previous', array('text' => $i, 'element' => $element, 'interval' => ($pager_current - $i), 'parameters' => $parameters)),
           );
         }
         if ($i == $pager_current) {
           $items[] = array(
-            'class' => array('active'), 
+            'class' => array('active'),
             'data' => '<a>' . $i . '</a>',
           );
         }
         if ($i > $pager_current) {
           $items[] = array(
-            'class' => array('pager-item'), 
+            'class' => array('pager-item'),
             'data' => theme('pager_next', array('text' => $i, 'element' => $element, 'interval' => ($i - $pager_current), 'parameters' => $parameters)),
           );
         }
       }
       if ($i < $pager_max) {
         $items[] = array(
-          'class' => array('pager-ellipsis'), 
+          'class' => array('pager-ellipsis'),
           'data' => '…',
         );
       }
@@ -265,13 +267,13 @@ function unicorn_pager($variables) {
     // End generation.
     if ($li_next) {
       $items[] = array(
-        'class' => array('pager-next'), 
+        'class' => array('pager-next'),
         'data' => $li_next,
       );
     }
     if ($li_last) {
       $items[] = array(
-        'class' => array('pager-last'), 
+        'class' => array('pager-last'),
         'data' => $li_last,
       );
     }
