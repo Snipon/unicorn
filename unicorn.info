@@ -14,7 +14,7 @@ stylesheets[all][] = system.menus.css
 
 ; Stylesheets
 ; ------------------------------------------
-stylesheets[all][] = styles/unicorn.main.css
+stylesheets[all][] = css/unicorn.main.css
 
 ; Scripts
 ; ------------------------------------------

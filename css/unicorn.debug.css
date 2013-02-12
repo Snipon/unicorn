@@ -1,0 +1,24 @@
+.container:hover {
+  position: relative;
+  background-color: rgba(155, 155, 155, 0.1); }
+
+[class*='span']:hover {
+  background-color: rgba(155, 0, 0, 0.1);
+  position: relative; }
+
+.container:hover:before,
+[class*='span']:hover:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  padding: 2px 5px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  content: attr(class);
+  color: white;
+  z-index: 10; }
+
+.container:hover:before {
+  bottom: 0;
+  top: auto; }

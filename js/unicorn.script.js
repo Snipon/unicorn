@@ -4,3 +4,4 @@ jQuery(function($){
   }
   console.log('Unicorn JS operational');
 });
+//=require bootstrap-all
