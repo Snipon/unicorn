@@ -47,7 +47,7 @@ function unicorn_preprocess_html(&$variables){
   }
 
   $element = array();
-  
+
   // Set charset
   $element[] = array(
     '#tag' => 'meta',
@@ -56,7 +56,7 @@ function unicorn_preprocess_html(&$variables){
       'content' => 'utf-8',
     ),
   );
-  
+
   // Set device zoom
   $element[] = array (
     '#tag' => 'meta',

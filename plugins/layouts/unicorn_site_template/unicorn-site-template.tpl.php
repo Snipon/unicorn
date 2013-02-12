@@ -6,7 +6,7 @@
  * the Panels Everywhere module.
  */
 ?>
-<div<?php print $css_id ? " id=\"$css_id\"" : ''; ?> class="page-wrapper">
+<div<?php print !empty($css_id) ? " id=\"$css_id\"" : ''; ?> class="page-wrapper">
 
   <?php if (!empty($content['branding'])): ?>
     <div class="branding-wrapper">
@@ -34,7 +34,7 @@
 
   <?php if (!empty($content['footer'])): ?>
     <div class="closure-wrapper">
-        <section class="closure container">
+        <footer class="closure container">
           <?php print render($content['footer']); ?>
         </footer>
     </div>
