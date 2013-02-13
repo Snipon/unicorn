@@ -11,6 +11,7 @@ http://compass-style.org/
 https://github.com/vwall/compass-twitter-bootstrap
 
 To begin awesome, go to the unicorn folder and type
+
     compass watch
 
 Clear cache and enjoy.
