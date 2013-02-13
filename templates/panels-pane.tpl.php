@@ -32,7 +32,9 @@
     </div>
   <?php endif; ?>
 
-  <?php print render($content); ?>
+  <div class="pane-content">
+    <?php print render($content); ?>
+  </div> 
 
   <?php if ($links): ?>
     <div class="links">
