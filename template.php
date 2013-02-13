@@ -13,6 +13,7 @@ $theme_path = drupal_get_path('theme', 'unicorn');
   require_once $theme_path . '/includes/button.inc';
   require_once $theme_path . '/includes/localtasks.inc';
   require_once $theme_path . '/includes/messages.inc';
+  require_once $theme_path . '/includes/itemlist.inc';
   require_once $theme_path . '/includes/pager.inc';
 
 /**
