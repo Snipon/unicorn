@@ -60,16 +60,18 @@ function unicorn_pager($variables) {
   $li_last = theme('pager_last', array('text' => (isset($tags[4]) ? $tags[4] : t('last')), 'element' => $element, 'parameters' => $parameters));
 
   if ($pager_total[$element] > 1) {
+    /*
     if ($li_first) {
       $items[] = array(
         'class' => array('pager-first'), 
         'data' => $li_first,
       );
     }
+    */
 
     if ($li_previous) {
       $items[] = array(
-        'class' => array('prev'), 
+        'class' => array('previous'),
         'data' => $li_previous,
       );
     }
@@ -92,7 +94,7 @@ function unicorn_pager($variables) {
         }
         if ($i == $pager_current) {
           $items[] = array(
-            'class' => array('active'), // Add the active class 
+            'class' => array('disabled', 'active'), // Add the active class
             'data' => l($i, '#', array('fragment' => '','external' => TRUE)),
           );
         }
@@ -117,17 +119,19 @@ function unicorn_pager($variables) {
         'data' => $li_next,
       );
     }
+    /*
     if ($li_last) {
       $items[] = array(
         'class' => array('pager-last'), 
         'data' => $li_last,
       );
     }
+    */
 
-    return '<div class="pagination pagination-centered">'. theme('item_list', array(
+    return theme('item_list', array(
       'items' => $items, 
       'attributes' => array('class' => array('pager')),
-    )) . '</div>';
+    ));
   }
   
   return $output;

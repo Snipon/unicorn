@@ -11,6 +11,7 @@ plugins[panels][layouts] = plugins/layouts
 ; Stylesheet overrides
 ; ------------------------------------------
 stylesheets[all][] = system.menus.css
+stylesheets[all][] = system.theme.css
 
 ; Stylesheets
 ; ------------------------------------------
