@@ -3,12 +3,9 @@
 This is a base theme template based on twitter bootstrap.
 You need compass to compile the stylesheets
 
-To enable the js plugins, jquery_update is needed.
-http://drupal.org/project/jquery_update
+To enable the js plugins, [jquery_update](http://drupal.org/project/jquery_update) is needed.
 
-You will also need compass and compass_twitter_bootstrap
-http://compass-style.org/
-https://github.com/vwall/compass-twitter-bootstrap
+You will also need [compass](http://compass-style.org/) and [compass_twitter_bootstrap](https://github.com/vwall/compass-twitter-bootstrap)
 
 To begin awesome, go to the unicorn folder and type
 
